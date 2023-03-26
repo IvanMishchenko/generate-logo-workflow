@@ -19,9 +19,7 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
-    outputs:
-      repo:
-        type: CloneRepo.outputs.repo
+
     uses: script@v1
     with:
       script: |-
@@ -37,9 +35,9 @@ jobs:
     resources:
       instance-type: C5
     needs:
-      - InstallDep
+      - CloneRepo
     inputs:
-      repo: InstallDep.outputs.repo
+      repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
       script: python /inputs/repo/run-stable-diffusion.py
