@@ -1,11 +1,12 @@
 import torch
 from diffusers import StableDiffusionPipeline
+from gradient import ModelsClient
 
 # model_id = "CompVis/stable-diffusion-v1-4"
 # device = "cuda"
 
-name = StableDiffusionPipeline.config_name
-print(name)
+print('---->>', gradient.list())
+
 # pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 # pipe = pipe.to(device)
 
