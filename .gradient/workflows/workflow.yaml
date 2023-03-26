@@ -19,7 +19,7 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
-   outputs:
+    outputs:
       repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
