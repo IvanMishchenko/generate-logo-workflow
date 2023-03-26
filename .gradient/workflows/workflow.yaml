@@ -24,7 +24,8 @@ jobs:
       script: |-
         pip install --upgrade pip
         pip install torch
+        pip install scipy
         pip install diffusers
-        pip install --upgrade diffusers transformers scipy
+        pip install transformers
         python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
