@@ -19,6 +19,9 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
+    outputs:
+      repo:
+        type: volume
     uses: script@v1
     with:
       script: |-
