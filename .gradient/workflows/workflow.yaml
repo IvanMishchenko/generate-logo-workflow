@@ -22,7 +22,8 @@ jobs:
     uses: script@v1
     with:
       script: |-
-        pip install torch      
+        pip install --upgrade pip
         pip install diffusers
+        pip install torch      
         python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
