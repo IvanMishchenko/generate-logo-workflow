@@ -19,7 +19,9 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
-
+    outputs:
+      repo:
+        type: volume
     uses: script@v1
     with:
       script: |-
@@ -37,7 +39,7 @@ jobs:
     needs:
       - InstallDep
     inputs:
-      repo: InstallDep.inputs.repo
+      repo: InstallDep.outputs.repo
     uses: script@v1
     with:
       script: python /inputs/repo/run-stable-diffusion.py
