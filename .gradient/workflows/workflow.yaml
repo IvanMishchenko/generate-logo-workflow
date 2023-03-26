@@ -21,7 +21,7 @@ jobs:
       repo: CloneRepo.outputs.repo
     outputs:
       repo:
-        type: volume
+        type: CloneRepo.outputs.repo
     uses: script@v1
     with:
       script: |-
@@ -42,5 +42,5 @@ jobs:
       repo: InstallDep.outputs.repo
     uses: script@v1
     with:
-      script: python /inputs/repo/hello.py
+      script: python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
