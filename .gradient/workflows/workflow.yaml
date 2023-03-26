@@ -23,5 +23,4 @@ jobs:
     with:
       script: |-
         pip install ftfy
-        python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
