@@ -34,7 +34,6 @@ jobs:
     resources:
       instance-type: C5
     needs:
-      - CloneRepo
       - InstallDep
     inputs:
       repo: CloneRepo.outputs.repo
