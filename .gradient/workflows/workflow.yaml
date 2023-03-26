@@ -42,5 +42,5 @@ jobs:
       repo: InstallDep.outputs.repo
     uses: script@v1
     with:
-      script: python /inputs/repo/run-stable-diffusion.py
+      script: python /inputs/repo/hello.py
       image: tensorflow/tensorflow:1.14.0-py3
