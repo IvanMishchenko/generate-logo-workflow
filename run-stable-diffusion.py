@@ -4,7 +4,8 @@ from diffusers import StableDiffusionPipeline
 # model_id = "CompVis/stable-diffusion-v1-4"
 # device = "cuda"
 
-
+name = StableDiffusionPipeline.config_name
+print(name)
 # pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
 # pipe = pipe.to(device)
 
