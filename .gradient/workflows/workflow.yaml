@@ -22,7 +22,7 @@ jobs:
     outputs:
       repo:
         type: volume
-    uses: script@v1
+    uses: git-checkout@v1
     with:
       script: |-
         pip install --upgrade pip
@@ -32,6 +32,7 @@ jobs:
         pip install ipywidgets msgpack rich 
         pip install diffusers
         pip install transformers
+      url: context.event.github.ur
       image: tensorflow/tensorflow:1.14.0-py3
   RunStableDiffusion:
     resources:
