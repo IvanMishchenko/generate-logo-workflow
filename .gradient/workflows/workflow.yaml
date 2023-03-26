@@ -19,30 +19,10 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
-    outputs:
-      repo:
-        type: volume
     uses: script@v1
     with:
       script: |-
-        pip install --upgrade pip
-        pip install torch
-        pip install ftfy
-        pip install flax==0.5.0 --no-deps
-        pip install ipywidgets msgpack rich 
+        pip install torch      
         pip install diffusers
-        pip install transformers
-      image: tensorflow/tensorflow:1.14.0-py3
-  RunStableDiffusion:
-    resources:
-      instance-type: C5
-    when: delayed
-    start_in: 10 minutes
-    needs:
-      - CloneRepo
-    inputs:
-      repo: CloneRepo.outputs.repo
-    uses: script@v1
-    with:
-      script: python /inputs/repo/run-stable-diffusion.py
+        python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
