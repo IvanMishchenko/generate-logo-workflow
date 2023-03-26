@@ -21,5 +21,14 @@ jobs:
       repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
-      script: python /inputs/repo/run-stable-diffusion.py
+      script: |-
+        !pip install --upgrade pip
+        !pip install torch
+        !pip install scipy
+        !pip install ftfy
+        !pip install flax==0.5.0 --no-deps
+        !pip install ipywidgets msgpack rich 
+        !pip install diffusers
+        !pip install transformers
+        python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
