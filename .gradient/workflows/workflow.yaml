@@ -21,6 +21,5 @@ jobs:
       repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
-      script: |-
-        pip install ftfy
+      script: pip install ftfy
       image: tensorflow/tensorflow:1.14.0-py3
