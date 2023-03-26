@@ -20,7 +20,7 @@ jobs:
     inputs:
       repo: CloneRepo.outputs.repo
     outputs:
-      repo: CloneRepo
+      repo: InstallDep.inputs.repo
     uses: script@v1
     with:
       script: |-
