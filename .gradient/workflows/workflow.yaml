@@ -22,7 +22,7 @@ jobs:
     outputs:
       repo:
         type: volume
-    uses: git-checkout@v1
+    uses: script@v1
     with:
       script: |-
         pip install --upgrade pip
@@ -32,15 +32,16 @@ jobs:
         pip install ipywidgets msgpack rich 
         pip install diffusers
         pip install transformers
-      url: context.event.github.ur
       image: tensorflow/tensorflow:1.14.0-py3
   RunStableDiffusion:
     resources:
       instance-type: C5
+    when: delayed
+    start_in: 10 minutes
     needs:
-      - InstallDep
+      - CloneRepo
     inputs:
-      repo: InstallDep.outputs.repo
+      repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
       script: python /inputs/repo/run-stable-diffusion.py
