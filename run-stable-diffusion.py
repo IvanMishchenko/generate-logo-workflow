@@ -1,8 +1,8 @@
 import torch
 from torch import autocast
 from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
-import ipywidgets as widgets
-from ipywidgets import interact
+# import ipywidgets as widgets
+# from ipywidgets import interact
 
 # %cd ~/../notebooks
 
