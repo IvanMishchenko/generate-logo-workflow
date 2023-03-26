@@ -20,8 +20,7 @@ jobs:
     inputs:
       repo: CloneRepo.outputs.repo
     outputs:
-      repo:
-        type: volume
+      repo: CloneRepo
     uses: script@v1
     with:
       script: |-
@@ -32,5 +31,15 @@ jobs:
         pip install ipywidgets msgpack rich 
         pip install diffusers
         pip install transformers
-        python /inputs/repo/run-stable-diffusion.py
+      image: tensorflow/tensorflow:1.14.0-py3
+  RunStableDiffusion:
+    resources:
+      instance-type: C5
+    needs:
+      - InstallDep
+    inputs:
+      repo: InstallDep.outputs.repo
+    uses: script@v1
+    with:
+      script: python /inputs/repo/run-stable-diffusion.py
       image: tensorflow/tensorflow:1.14.0-py3
