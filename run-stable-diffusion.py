@@ -1,6 +1,7 @@
 import torch
 from diffusers import StableDiffusionPipeline
 from gradient import ModelsClient
+from gradient import NotebooksClient
 from gradient import MachinesClient
 
 # model_id = "CompVis/stable-diffusion-v1-4"
